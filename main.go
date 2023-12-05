@@ -66,9 +66,6 @@ func main() {
 	mnemonic := "banana alien boat bone cat cloud dog dolphin hospital kiwi lion pizza"
 	desiredAddress := "0x67d37A4E1674e4CBf13d66B839010B31f63dd844"
 
-	// mnemonic := "trip shrimp fire boring drum check analyst swing math dash flavor sadness"
-	// desiredAddress := "0x10FAe82359B537D01B6B15ce907b39993187F0C2"
-
 	fmt.Println(mnemonic, desiredAddress)
 
 	// Split mnemonic into words
@@ -97,12 +94,6 @@ func main() {
 		}
 
 		currentMnemonic := strings.Join(words, " ")
-
-		// if !bip39.IsMnemonicValid(mnemonic) {
-		// 	permutationInvalid++
-		// 	continue
-		// }
-		// permutationValid++
 
 		wg.Add(1)
 		go checkMnemonic(currentMnemonic, desiredAddress, &wg, &found)
