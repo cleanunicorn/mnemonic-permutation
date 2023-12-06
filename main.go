@@ -75,8 +75,6 @@ func main() {
 	var wg sync.WaitGroup
 	found := false
 	permutationCount := 0	
-	permutationValid := 0
-	permutationInvalid := 0
 
 	wg.Add(1)
 	currentMnemonic := strings.Join(words, " ")
@@ -87,10 +85,6 @@ func main() {
 		permutationCount++
 		if permutationCount%100000 == 0 {
 			fmt.Printf("Tried %d permutations\n", permutationCount)
-			fmt.Printf("Stats \t%d/\t%d\n", 
-				permutationValid, 
-				permutationInvalid, 
-			)
 		}
 
 		currentMnemonic := strings.Join(words, " ")
